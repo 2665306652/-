@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>签到页面</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script src="jquery/jquery.min.js"></script>
+
+</head>
+
+<body>
+	<div class="box">
+		<audio style="display:none; height: 0 ;width : 0" id="bg-music" preload="auto" src="public/images/lottery/music.mp3"></audio>
+		<div class="boxs j_mask" style="display:none"> </div>
+		<div class="logo">
+			<img src="public/images/lottery/logo.png" alt="">
+		</div>
+		
+			<!-- <i class="iconfonts" id="music-icon">&#xe609;</i> -->
+			<div >
+				<img  class="icont-img"  id='music-icon' src="public/images/lottery/audio_icon.png" alt="" >
+			</div>
+		
+
+		<!-- <div class="container">
+			<img src="public/images/lottery/title.png" alt="">
+		</div> -->
+		<div class="container">
+			<img src="public/images/lottery/title.png" alt="">
+			
+		</div>
+		<div class="times">
+			<img src="public/images/lottery/time.png" alt="">
+		</div>
+		<div class="motorcycle">
+			<img src="public/images/lottery/Motorcycle.png" alt="">
+		</div>
+		<div class="car">
+			<img src="public/images/lottery/car.png" alt="">
+		</div>
+		<div class="footer">
+			<P class='footer-title'>请在下方输入您的姓名，抽奖号码及祝福语</P>
+			<div class="list" id="newList">
+				<span>姓&nbsp&nbsp&nbsp名:</span>&nbsp&nbsp&nbsp&nbsp
+				<input type="text" name="username" id="username" placeholder="请输入你的姓名">
+			</div>
+			<div class="list">
+				<span>抽奖号:</span>&nbsp&nbsp&nbsp&nbsp
+				<input type="text" name="code" id="code" placeholder="请输入抽奖号" maxlength="4">
+			</div>
+			<div class="list">
+				<span>弹&nbsp&nbsp&nbsp幕:</span>&nbsp&nbsp&nbsp&nbsp
+				<span class="wishes" id="wishes">点击选择</span>
+
+			</div>
+
+			<a id="sign" class="choice">确认签到</a>
+
+
+		</div>
+		<div class="barrage" id="barrage" style="display:none">
+
+			<ul class="data">
+				<li class="array">
+					<p>祝大家新年快乐！</p>
+				</li>
+				<li class="array">
+					<P>恭贺新禧</P>
+				</li>
+				<li class="array">
+					<p>恭喜发财，大奖拿来！</p>
+				</li>
+				<li class="array">
+					<p>Happy New Year！</p>
+				</li>
+				<li class="array">
+					<p>吉祥如意，平安喜乐。</p>
+				</li>
+				<li class="array">
+					<p>未来，为你而来</p>
+				</li>
+				<li class="array">
+					<p>^(oo)^猪年大吉</p>
+				</li>
+				<li class="array">
+					<p>2019，全速最棒</p>
+				</li>
+				<li class="array">
+					<p>猪年快乐，全速最棒</p>
+				</li>
+				<li class="array">
+					<p>全速的明天更美好</p>
+				</li>
+				<li class="array">
+					<p>全速财源广进，蒸蒸日上</p>
+				</li>
+				<li class="array">
+					<p>全速再创辉煌，前景无限</p>
+				</li>
+				<li class="array">
+					<p>老板，我要加薪。</p>
+				</li>
+				<li class="array">
+					<p>前方高能</p>
+				</li>
+				<li class="array">
+					<p>这次的大奖肯定归我了</p>
+				</li>
+				<li class="array">
+					<p>今年年会最棒了</p>
+				</li>
+				<li class="array">
+					<p>大奖给我安排上了吗</p>
+				</li>
+				<li class="array">
+					<p>安排上了</p>
+				</li>
+
+				<li class="array">
+					<p>全速skr，skr</p>
+				</li>
+				<li class="array">
+					<p>好嗨哦,感觉人生已经到达了高潮</p>
+				</li>
+				<li class="array">
+					<p>感觉人生已经到达了巅峰</p>
+				</li>
+				<li class="array">
+					<p>2019年我要告别单身</p>
+				</li>
+				<li class="array">
+					<p>哼(ˉ(∞)ˉ)唧</p>
+				</li>
+				<li class="array">
+					<p>想看根根跳舞</p>
+				</li>
+				<li class="array">
+					<p>我想抱走二马！</p>
+				</li>
+				<li class="array">
+					<p>我搬着板凳来围观了！</p>
+				</li>
+				<li class="array">
+					<p>今天不加班，真开心</p>
+				</li>
+				<li class="array">
+					<p>今天我最帅！</p>
+				</li>
+				<li class="array">
+					<p>谁是全速最靓的仔！</p>
+				</li>
+				<li class="array">
+					<p>谁是全速最靓的妹！</p>
+				</li>
+				<li class="array">
+					<p>我就是全速最靓的仔！</p>
+				</li>
+				<li class="array">
+					<p>我就是全速最靓的妹！</p>
+				</li>
+
+				<li class="array">
+					<p>在座的各位都很美</p>
+				</li>
+				<li class="array">
+					<p>我是一个安静的美男子</p>
+				</li>
+
+				<li class="array">
+					<p>满脑子都是你</p>
+				</li>
+				<li class="array">
+					<p>满脑子都是钱</p>
+				</li>
+
+				<li class="array">
+					<p>emmmmmmm</p>
+				</li>
+				<li class="array">
+					<p>正在输入……！</p>
+				</li>
+				<li class="array">
+					<p>秀儿，是你嘛</p>~</li>
+				<li class="array">
+					<p>瞅什么瞅</p>
+				</li>
+				<li class="array">
+					<p>瞅你咋地</p>
+				</li>
+				<li class="array">
+					<p>必须的</p>~</li>
+
+				<li class="array">
+					<p>よいお年を</p>
+				</li>
+				<li class="array">
+					<p>一绪に顽张りましょう</p>
+				</li>
+				<li class="array">
+					<p>来来，飞机游艇走一波</p>~</li>
+				<li class="array">
+					<p>新年还是小可爱</p>
+				</li>
+				<li class="array">
+					<p>吾愿有三，暴富暴瘦爆炸酷</p>
+				</li>
+				<li class="array">
+					<p>确认过眼神，我是对的人</p>~</li>
+
+				<li class="array">
+					<p>燃烧我的卡路里</p>
+				</li>
+				<li class="array">
+					<p>我要成为全速锦鲤</p>
+				</li>
+				<li class="array">
+					<p>小仙女到场啦~~~</p>
+				</li>
+				<li class="array">
+					<p>男神报道</p>
+				</li>
+				<li class="array">
+					<p>新年锦鲤就是我！</p>
+				</li>
+				<li class="array">
+					<p>10101010101010</p>
+				</li>
+			</ul>
+		</div> 
+
+	</div>
+	<div class="submitToast"></div>
+</body>
+<script type="text/javascript">
+	var timer = null,
+		submitToast = document.getElementsByClassName('submitToast')[0];
+
+	// 弹窗信息提示
+	function toast(text, icon) {
+		if (timer !== null) {
+			clearTimeout(timer);
+			timer = null;
+		};
+		var icon2 = icon || '642';
+		// var tem = `<i class="iconfont">&#xe${icon};</i><p class="text">${text}</p>`
+		var tem = "<i class='iconfont'>" + "&#xe" + icon + "</i><p class='text'>" + text + "</p>"
+		submitToast.innerHTML = tem;
+		submitToast.style.display = 'flex';
+		timer = setTimeout(function () {
+			submitToast.style.display = 'none';
+			clearTimeout(timer);
+			timer = null;
+		}, 2000);
+	};
+
+	//点击获取弹层
+	$('#wishes').click(function () {
+		$("#barrage").show(),
+			$(".boxs").show()
+	})
+	$('.j_mask').on('click', function () {
+		$("#barrage").hide(),
+			$(".boxs").hide()
+	})
+	$(function () {
+		//判断非空
+		$('#sign').click(function () {
+			var reg =
+				/[^\u0020-\u007E\u00A0-\u00BE\u2E80-\uA4CF\uF900-\uFAFF\uFE30-\uFE4F\uFF00-\uFFEF\u0080-\u009F\u2000-\u201f\u2026\u2022\u20ac\r\n]/g;
+			if ($("#username").val() == "") {
+				toast('姓名不能为空', '642');
+
+				return;
+			} else if (reg.test($("#username").val())) {
+				toast('不能输入表情', '642');
+				return
+
+			}
+			if ($("#code").val() == "") {
+				toast('抽奖号不能为空', '642');
+				return;
+			} else if ($("#code").val().length !== 4) {
+				toast('请输入4位抽奖号', '642');
+				return;
+			}
+			if ($("#wishes ").html() == "点击选择") {
+				toast('请选择弹幕', '642');
+				return;
+			}
+			updata();
+		});
+
+
+	})
+
+
+
+	//传值给后台
+	function updata() {
+		var usernameData = $.trim($('#username').val().trim())
+		var codeData = $.trim($('#code').val().trim())
+		var wishesData = $.trim($('#wishes').html().trim())
+		var data = {
+			"username": usernameData,
+			"code": codeData,
+			"wishes": wishesData
+		}
+		// console.log(data)
+		$.ajax({
+			url: "http://192.168.3.213/lottery/public/signin",
+			data: data,
+			type: "post",
+			success: function (data) {
+				if (data.code == 200) {
+					toast('签到成功', '742');
+					$('.iconfont').css('color', '#4de5fa')
+					$('.text').css('color', "#4de5fa")
+				} else if (data.code == 205) {
+					toast('请勿重复签到', '642');
+				} else if (data.code == 204) {
+					toast('签到失败', '642');
+
+				}
+			}
+
+		});
+
+	};
+
+	// 取到每个相应li的值
+	$(function () {
+		$('.data').find('li').each(function () {
+			$(this).click(function () {
+				$('#wishes').html($(this).text());
+				$("#wishes").css('color', '#4de5fa')
+				$("#barrage").hide();
+				$(".boxs").hide();
+			})
+		})
+
+	})
+	//键盘升起留白处理
+	var bstop = false;
+	$('input').on('blur', function () {
+		bstop = false;
+		// es6不兼容？？ ios9系统和ie9我看都是个大坑啊！！！！
+		// setTimeout(() => {
+		// 	if (bstop) {
+		// 		return;
+		// 	};
+		// 	window.scroll(0, 0);
+		// }, 30);
+
+		setTimeout(function () {
+			if (bstop) {
+				return;
+			};
+			window.scroll(0, 0);
+		}, 30);
+	});
+	$('input').on('focus', function () {
+		bstop = true;
+	});
+
+
+	//音乐自动播放
+	$(document).ready(function () {
+		autoPlayMusic();
+		audioAutoPlay();
+		$("#bg-music").get(0).play();
+		var flag = false;
+		$("#music-icon").click(function () {
+			if (!flag) {
+				$(".icont-img").removeClass("play").addClass("pause");
+				//点击音乐停止
+				$("#bg-music").get(0).pause();
+				flag = true;
+			} else {
+				$(".icont-img").removeClass("pause").addClass("play");
+				//音乐播放
+				$("#bg-music").get(0).play();
+				flag = false;
+			}
+		})
+
+
+		function audioAutoPlay() {
+			var audio = document.getElementById('bg-music');
+			audio.play();
+			document.addEventListener("WeixinJSBridgeReady", function () {
+				audio.play();
+			}, false);
+		}
+		// 音乐播放
+		function autoPlayMusic() {
+			// 自动播放音乐效果，解决浏览器或者APP自动播放问题
+			function musicInBrowserHandler() {
+				musicPlay(true);
+				document.body.removeEventListener('touchstart', musicInBrowserHandler);
+			}
+			document.body.addEventListener('touchstart', musicInBrowserHandler);
+			// 自动播放音乐效果，解决微信自动播放问题
+			function musicInWeixinHandler() {
+				musicPlay(true);
+				document.addEventListener("WeixinJSBridgeReady", function () {
+					musicPlay(true);
+				}, false);
+				document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
+			}
+			document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
+		}
+
+		function musicPlay(isPlay) {
+			var media = document.querySelector('#bg-music');
+			if (isPlay && media.paused) {
+				media.play();
+			}
+			if (!isPlay && !media.paused) {
+				media.pause();
+			}
+		}
+	});
+// 禁止页面拉动
+// 	document.body.addEventListener('touchmove', function (e) {
+//     e.preventDefault(); 
+// }, {passive: false})
+</script>
+
+
+
+
+</html>

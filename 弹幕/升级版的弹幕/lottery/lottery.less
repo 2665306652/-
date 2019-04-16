@@ -1,0 +1,778 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+li {
+    list-style-type: none;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: 'number';
+    src: '../public/font/DINCond-Black.otf' format('otf');
+}
+
+.mui-act {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    .act-body {
+        width: 1280px;
+        height: 640px; // border: 1px solid red;
+        margin: 0 auto;
+        .act-number {
+            width: 60%;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+            font-family: 'DINCond-Black';
+            .number-list {
+                // transform: translateY(-1557px)
+                width: 181px;
+                height: 173px;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            .number-item {
+                width: 181px;
+                height: 173px;
+                line-height: 173px;
+                overflow: hidden; // text-align: center;
+                overflow: hidden;
+                background: url("../public/images/lottery/draw-number-bg.png") center top no-repeat;
+                color: #fdff2f;
+                font-size: 140px;
+                margin: 20px 10px 0 10px;
+                flex: 1;
+                position: relative;
+                text-indent: 50px;
+            }
+            .number-item:first-child {
+                .number-list {
+                    top: -346px;
+                }
+            }
+            .number-item:nth-child(3) {
+                .number-list {
+                    top: -173px;
+                }
+            }
+            .number-item:nth-child(4) {
+                .number-list {
+                    // top: -1557px;
+                    top: -173px;
+                }
+            }
+            .number-item-checked {
+                animation: Scale .5s ease-in forwards 1;
+            }
+        }
+        .act-main {
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            .main-winning-number {
+                width: 472px;
+                height: 380px;
+                overflow: hidden;
+                .winning-number-list {
+                    // display: flex;
+                    // flex-wrap: wrap;
+                    overflow: hidden;
+                    margin: 0 auto;
+                    .list-item {
+                        font-size: 34px;
+                        color: #17fff1;
+                        float: left;
+                        opacity: 0;
+                        animation: Opacity3 .5s ease-in forwards 1;
+                        background: -webkit-linear-gradient(-30deg, rgba(255, 255, 255, 0) 100px, rgba(255, 255, 255, 1) 180px, rgba(255, 255, 255, 1) 240px, rgba(255, 255, 255, 0) 300px) -300px 0 no-repeat;
+                        -webkit-background-clip: text;
+                    }
+                }
+            }
+            .main-anim {
+                width: 340px;
+                .anim-box {
+                    width: 202px;
+                    height: 202px; // overflow: hidden;
+                    margin: 0 auto;
+                    position: relative;
+                    background: url('../public/images/lottery/lottery-button-4.png') center center no-repeat;
+                    margin-top: 73px; // box-shadow: 0 0 80px #f00; 
+                    border-radius: 202px;
+                    cursor: pointer;
+                    .anim-bg {
+                        width: 317px;
+                        height: 317px;
+                        background: url('../public/images/lottery/lottery-button-bg.png') left top no-repeat;
+                        background-size: 100% 100%;
+                        position: absolute;
+                        left: -57px;
+                        top: -57px;
+                        z-index: 3;
+                        opacity: .2;
+                    }
+                    .anim-item-1 {
+                        display: block;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        z-index: 10;
+                    }
+                    .anim-item-2 {
+                        display: block;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        z-index: 10;
+                    }
+                    .anim-item-3 {
+                        display: block;
+                        z-index: 10;
+                    }
+                }
+                .btn-revolve {
+                    .anim-bg {
+                        animation: opacity 1s 0s linear infinite;
+                        -webkit-animation: opacity 1s 0s linear infinite;
+                    }
+                    .anim-item-1 {
+                        animation: musicRotate 3s 0s linear infinite;
+                        -webkit-animation: musicRotate 3s 0s linear infinite;
+                    }
+                    .anim-item-2 {
+                        animation: RotateS 1s 0s linear infinite;
+                        -webkit-animation: RotateS 1s 0s linear infinite;
+                    }
+                    .anim-item-3 {
+                        animation: musicRotate .5s 0s linear infinite;
+                        -webkit-animation: musicRotate .5s 0s linear infinite;
+                        z-index: 10;
+                    }
+                } // .btn-start-move {
+                //     .anim-bg {
+                //         opacity: .2;
+                //         animation: Opacity 4s ease-in forwards 1;
+                //     }
+                //     .anim-item-1{
+                //         animation: move 2s ease-in infinite  ;
+                //     }
+                //     .anim-item-2{
+                //         animation: move2 4s ease-in infinite;
+                //     }
+                //     .anim-item-3{
+                //         animation: move 4s ease-in infinite;
+                //     }
+                // }
+                // .btn-idling-move {
+                //     .anim-bg {
+                //         opacity: .2;
+                //         animation: Opacity 8s ease-in forwards 1;
+                //     }
+                //     .anim-item-1{
+                //         animation: move 4s ease-in infinite  ;
+                //     }
+                //     .anim-item-2{
+                //         animation: move2 8s ease-in infinite;
+                //     }
+                //     .anim-item-3{
+                //         animation: move 8s ease-in infinite;
+                //     }
+                // }
+                // .btn-speed-move{
+                //     .anim-bg {
+                //         opacity: .2;
+                //         animation:  Opacity 10s ease-in-out forwards 1;
+                //     }
+                //     .anim-item-1{
+                //         animation: move 1s linear infinite  ;
+                //     }
+                //     .anim-item-2{
+                //         animation: move2 3s linear infinite;
+                //     }
+                //     .anim-item-3{
+                //         animation: move 2s linear infinite;
+                //     }
+                // }
+                .btn-end-move {
+                    .anim-bg {
+                        opacity: .5;
+                        animation: Opacity1 6s ease-in-out forwards 1;
+                    }
+                    .anim-item-1 {
+                        animation: move3 7s ease-in-out 1;
+                    }
+                    .anim-item-2 {
+                        animation: move4 8s ease-in-out 1;
+                    }
+                    .anim-item-3 {
+                        animation: move3 9s ease-in-out 1;
+                    }
+                }
+                .btn-first-move {
+                    .anim-bg {
+                        opacity: .2;
+                        animation: Opacity1 12s ease-in-out forwards 1;
+                    }
+                    .anim-item-1 {
+                        animation: move3 12s ease-in-out 1;
+                    }
+                    .anim-item-2 {
+                        animation: move4 12s ease-in-out 1;
+                    }
+                    .anim-item-3 {
+                        animation: move3 12s ease-in-out 1;
+                    }
+                }
+                .btn-ordinary-move {
+                    .anim-bg {
+                        opacity: .2;
+                        animation: Opacity 2s ease-in-out forwards 1;
+                    }
+                    .anim-item-1 {
+                        animation: move 2s ease-in-out 1;
+                    }
+                    .anim-item-2 {
+                        animation: move2 2s ease-in-out 1;
+                    }
+                    .anim-item-3 {
+                        animation: move 2s ease-in-out 1;
+                    }
+                }
+                .btn-special-start {
+                    .anim-bg {
+                        opacity: .5;
+                        animation: Opacity1 4s ease-in-out forwards 1;
+                    }
+                    .anim-item-1 {
+                        animation: move 4s ease-in-out 1;
+                    }
+                    .anim-item-2 {
+                        animation: move2 4s ease-in-out 1;
+                    }
+                    .anim-item-3 {
+                        animation: move 4s ease-in-out 1;
+                    }
+                }
+                .btn-special-move {
+                    .anim-bg {
+                        opacity: .5;
+                        animation: Opacity1 3s ease-in-out 1;
+                    }
+                    .anim-item-1 {
+                        animation: move 3s ease-in-out 1;
+                    }
+                    .anim-item-2 {
+                        animation: move2 3s ease-in-out 1;
+                    }
+                    .anim-item-3 {
+                        animation: move 3s ease-in-out 1;
+                    }
+                }
+                .anim-shadow {
+                    position: absolute;
+                    left: 3px;
+                    top: 3px;
+                    width: 192px;
+                    height: 192px;
+                    box-shadow: 0 0 100px #f00 inset;
+                    content: '111111';
+                    border-radius: 200px;
+                    z-index: 2;
+                }
+            }
+            .main-winning-user {
+                width: 472px;
+                height: 380px;
+                overflow: hidden;
+                .winning-user-list {
+                    overflow: hidden;
+                    margin: 0 auto;
+                    .list-item {
+                        width: 82px;
+                        font-size: 18px;
+                        color: #01cad1;
+                        text-align: center;
+                        float: left;
+                        opacity: 0;
+                        animation: Opacity3 .5s ease-in forwards 1;
+                        text-align: center;
+                        .item-photo {
+                            display: block;
+                            width: 80px;
+                            height: 80px;
+                            border-radius: 80px;
+                            border: 1px solid #01cad1;
+                            background: #ccc;
+                        }
+                        .user-name {
+                            display: inline;
+                            width: 100%;
+                            overflow: hidden;
+                        }
+                        .short-name{
+                            font-size: 16px
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.prize-4 {
+    background: url("../public/images/lottery/prize-4-bg.jpg") center top no-repeat;
+    .number-item {
+        font-size: 110px !important;
+        text-indent: 26px !important;
+    }
+    .act-main {
+        .main-winning-number {
+            .winning-number-list {
+                // width:99%;
+                overflow: hidden;
+                margin: 0 auto;
+                padding-left: 40px;
+                padding-top: 40px;
+                .list-item {
+                    margin-right: 31px;
+                    line-height: 120px;
+                }
+                .list-item:first-child,
+                .list-item:nth-child(8) {
+                    padding-left: 50px;
+                }
+                .list-item:nth-child(7) {
+                    margin-right: 0;
+                }
+            }
+        }
+        .main-winning-number,
+        .main-winning-user {
+            .winning-number-list,
+            .winning-user-list {
+                // width:99%;
+                overflow: hidden;
+                margin: 0 auto;
+                padding-left: 40px;
+                padding-top: 40px;
+                .list-item {
+                    margin-right: 31px;
+                }
+                .list-item:first-child,
+                .list-item:nth-child(8) {
+                    padding-left: 50px;
+                }
+                .list-item:nth-child(7) {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+.prize-3 {
+    background: url("../public/images/lottery/prize-3-bg.png") center top no-repeat;
+    .act-main {
+        .main-winning-number {
+            .winning-number-list {
+                padding-left: 40px;
+                padding-top: 20px;
+                .list-item {
+                    margin-right: 31px;
+                    line-height: 120px;
+                    color: #97ff7f !important;
+                }
+                .list-item:first-child,
+                .list-item:nth-child(7) {
+                    padding-left: 50px;
+                }
+                .list-item:nth-child(6) {
+                    margin-right: 50px;
+                }
+            }
+        }
+        .main-winning-user {
+            .winning-user-list {
+                padding-left: 40px;
+                padding-top: 40px;
+                .list-item {
+                    margin-right: 31px;
+                    color: #97ff7f !important;
+                    .item-photo {
+                        border-color: #97ff7f !important;
+                    }
+                }
+                .list-item:first-child,
+                .list-item:nth-child(7) {
+                    padding-left: 50px;
+                }
+                .list-item:nth-child(6) {
+                    margin-right: 50px;
+                }
+            }
+        }
+    }
+}
+
+.prize-2 {
+    background: url("../public/images/lottery/prize-2-bg.png") center top no-repeat;
+    .act-main {
+        .main-winning-number {
+            .winning-number-list {
+                padding-top: 20px;
+                .list-item {
+                    line-height: 120px;
+                    margin-left: 50px;
+                    margin-right: 50px;
+                    font-size: 42px !important;
+                    color: #fff490 !important;
+                }
+                .list-item:first-child,
+                .list-item:nth-child(4) {
+                    padding-left: 50px;
+                }
+                .list-item:nth-child(3) {
+                    margin-right: 150px;
+                    margin-left: 189px;
+                }
+            }
+        }
+        .main-winning-user {
+            .winning-user-list {
+                padding-top: 30px;
+                .list-item {
+                    margin-right: 120px;
+                    width: 122px !important;
+                    color: #fff490 !important;
+                    .item-photo {
+                        width: 120px !important;
+                        height: 120px !important;
+                        border-color: #fff490 !important;
+                    }
+                }
+                .list-item:first-child,
+                .list-item:nth-child(4) {
+                    padding-left: 50px;
+                }
+                .list-item:nth-child(3) {
+                    margin-right: 150px;
+                    margin-left: 175px;
+                    margin-top: -55px
+                }
+                .list-item:nth-child(2),
+                .list-item:nth-child(5) {
+                    margin-right: 0;
+                }
+                .list-item:nth-child(4),
+                .list-item:nth-child(5) {
+                    margin-top: -55px;
+                }
+            }
+        }
+    }
+}
+
+.prize-0,
+.prize-1 {
+    background: url("../public/images/lottery/prize-0-bg.png") center top no-repeat;
+    .act-main {
+        .main-winning-number {
+            .winning-number-list {
+                width: 187px;
+                overflow: hidden;
+                padding-top: 80px;
+                .list-item {
+                    font-size: 32px !important;
+                    text-align: center;
+                    clear: left !important;
+                    margin: 0 auto;
+                    color: #bb5d84 !important;
+                    .item-photo {
+                        display: block;
+                        width: 180px;
+                        height: 180px;
+                        border-radius: 185px;
+                        border: 3px solid #ff2754;
+                        background: #ccc;
+                    }
+                    .user-name {
+                        display: inline;
+                        width: 100%;
+                        overflow: hidden;
+                    }
+                    .short-name{
+                        font-size: 16px
+                    }
+                }
+            }
+        }
+        .main-anim {
+            .anim-box {
+                .anim-bg {
+                    opacity: .5 !important;
+                }
+            }
+        }
+        .main-winning-user {
+            .winning-user-list {
+                width: 187px;
+                padding-top: 80px;
+                .list-item {
+                    margin-right: 187px;
+                    width: 187px !important;
+                    font-size: 32px !important;
+                    text-align: center;
+                    color: #feffa2 !important;
+                    .item-photo {
+                        width: 180px !important;
+                        height: 180px !important;
+                        border-radius: 185px !important;
+                        border: 3px solid #fff100 !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// .prize-0{
+//     .number-item {
+//         font-size: 110px !important;
+//         text-indent: 26px !important;
+//     }
+// }
+.prize-1 {
+    background: url('../public/images/lottery/prize-1-bg.png') center top no-repeat;
+    .act-main {
+        .main-winning-number {
+            .winning-number-list {
+                .list-item {
+                    color: #ff6232 !important;
+                    .item-photo {
+                        border: 3px solid #ff6232;
+                    }
+                }
+            }
+        }
+        .main-winning-user {
+            .winning-user-list {
+                .list-item {
+                    color: #ff6232 !important;
+                    .item-photo {
+                        border: 3px solid #ff6232 !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/**奖项控制面板**/
+
+.mui-back {
+    width: 50px;
+    height: 50px;
+    line-height: 99em;
+    background: #02010F;
+    position: fixed;
+    left: 0;
+    top: 0; // transform: translateX(-50%);
+    overflow: hidden;
+    border-radius: 100px;
+    transition: all .5s;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    .back-list {
+        display: none;
+    }
+}
+
+.mui-back.active {
+    width: 800px;
+    line-height: 50px;
+    .back-list {
+        display: flex;
+        .list-item {
+            flex: 1;
+            text-align: center;
+            border-right: 1px solid #fff;
+            color: #fff;
+        }
+        .list-item:last-child {
+            border-right: none;
+        }
+        .item-checked {
+            background: #01cad1;
+        }
+    }
+}
+
+@keyframes musicRotate {
+    0% {
+        -webkit-transform: rotateZ(0deg);
+        transform: rotateZ(0deg);
+    }
+    100% {
+        -webkit-transform: rotateZ(-360deg);
+        transform: rotateZ(-360deg);
+    }
+}
+
+@-webkit-keyframes musicRotate {
+    0% {
+        -webkit-transform: rotateZ(0deg);
+        transform: rotateZ(0deg);
+    }
+    100% {
+        -webkit-transform: rotateZ(-360deg);
+        transform: rotateZ(-360deg);
+    }
+}
+
+@keyframes RotateS {
+    0% {
+        -webkit-transform: rotateZ(-360deg);
+        transform: rotateZ(-360deg);
+    }
+    100% {
+        -webkit-transform: rotateZ(0deg);
+        transform: rotateZ(0deg);
+    }
+}
+
+@-webkit-keyframes RotateS {
+    0% {
+        -webkit-transform: rotateZ(-360deg);
+        transform: rotateZ(-360deg);
+    }
+    100% {
+        -webkit-transform: rotateZ(0deg);
+        transform: rotateZ(0deg);
+    }
+}
+
+@keyframes Opacity {
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: .5;
+    }
+}
+
+@keyframes Opacity1 {
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: .5;
+    }
+}
+
+@keyframes Opacity3 {
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes Scale {
+    0% {
+        // -webkit-transform: rotateZ(-360deg);
+        // transform: rotateZ(-360deg);
+        transform: scale(1, 1)
+    }
+    50% {
+        // -webkit-transform: rotateZ(0deg);
+        // transform: rotateZ(0deg);
+        transform: scale(1.2, 1.2)
+    }
+    100% {
+        transform: scale(1, 1)
+    }
+}
+
+@-webkit-keyframes Scale {
+    0% {
+        // -webkit-transform: rotateZ(-360deg);
+        // transform: rotateZ(-360deg);
+        transform: scale(.5, .5)
+    }
+    50% {
+        // -webkit-transform: rotateZ(0deg);
+        // transform: rotateZ(0deg);
+        transform: scale(1, 1)
+    }
+    100% {
+        transform: scale(.5, .5)
+    }
+}
+
+.move {
+    animation: move 3s ease-in 1;
+}
+
+.movetoo {
+    animation: moveToo .4s linear infinite;
+}
+
+@keyframes move {
+    80% {
+        opacity: .8
+    }
+    100% {
+        transform: rotate3d(0, 0, 1, calc(360 * 10deg));
+    }
+}
+
+@keyframes move2 {
+    80% {
+        opacity: .8
+    }
+    100% {
+        transform: rotate3d(0, 0, 1, calc(-360 * 10deg));
+    }
+}
+
+@keyframes move3 {
+    80% {
+        opacity: .8
+    }
+    100% {
+        transform: rotate3d(0, 0, 1, calc(360 * 50deg));
+    }
+}
+
+@keyframes move4 {
+    80% {
+        opacity: .8
+    }
+    100% {
+        transform: rotate3d(0, 0, 1, calc(-360 * 100deg));
+    }
+}
+
+@keyframes moveToo {
+    100% {
+        transform: rotate3d(0, 0, 1, calc(360 * 28deg));
+    }
+}
+
+@keyframes jianbian {
+    100% {
+        width: 390px;
+        height: 390px;
+        opacity: 1;
+    }
+}

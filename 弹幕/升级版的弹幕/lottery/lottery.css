@@ -1,0 +1,649 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul,
+li {
+  list-style-type: none;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+@font-face {
+  font-family: 'number';
+  src: '../public/font/DINCond-Black.otf' format('otf');
+}
+.mui-act {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.mui-act .act-body {
+  width: 1280px;
+  height: 640px;
+  margin: 0 auto;
+}
+.mui-act .act-body .act-number {
+  width: 60%;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  font-family: 'DINCond-Black';
+}
+.mui-act .act-body .act-number .number-list {
+  width: 181px;
+  height: 173px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.mui-act .act-body .act-number .number-item {
+  width: 181px;
+  height: 173px;
+  line-height: 173px;
+  overflow: hidden;
+  background: url("../public/images/lottery/draw-number-bg.png") center top no-repeat;
+  color: #fdff2f;
+  font-size: 140px;
+  margin: 20px 10px 0 10px;
+  flex: 1;
+  position: relative;
+  text-indent: 50px;
+}
+.mui-act .act-body .act-number .number-item:first-child .number-list {
+  top: -346px;
+}
+.mui-act .act-body .act-number .number-item:nth-child(3) .number-list {
+  top: -173px;
+}
+.mui-act .act-body .act-number .number-item:nth-child(4) .number-list {
+  top: -173px;
+}
+.mui-act .act-body .act-number .number-item-checked {
+  animation: Scale 0.5s ease-in forwards 1;
+}
+.mui-act .act-body .act-main {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+}
+.mui-act .act-body .act-main .main-winning-number {
+  width: 472px;
+  height: 380px;
+  overflow: hidden;
+}
+.mui-act .act-body .act-main .main-winning-number .winning-number-list {
+  overflow: hidden;
+  margin: 0 auto;
+}
+.mui-act .act-body .act-main .main-winning-number .winning-number-list .list-item {
+  font-size: 34px;
+  color: #17fff1;
+  float: left;
+  opacity: 0;
+  animation: Opacity3 0.5s ease-in forwards 1;
+  background: -webkit-linear-gradient(-30deg, rgba(255, 255, 255, 0) 100px, #ffffff 180px, #ffffff 240px, rgba(255, 255, 255, 0) 300px) -300px 0 no-repeat;
+  -webkit-background-clip: text;
+}
+.mui-act .act-body .act-main .main-anim {
+  width: 340px;
+}
+.mui-act .act-body .act-main .main-anim .anim-box {
+  width: 202px;
+  height: 202px;
+  margin: 0 auto;
+  position: relative;
+  background: url('../public/images/lottery/lottery-button-4.png') center center no-repeat;
+  margin-top: 73px;
+  border-radius: 202px;
+  cursor: pointer;
+}
+.mui-act .act-body .act-main .main-anim .anim-box .anim-bg {
+  width: 317px;
+  height: 317px;
+  background: url('../public/images/lottery/lottery-button-bg.png') left top no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  left: -57px;
+  top: -57px;
+  z-index: 3;
+  opacity: .2;
+}
+.mui-act .act-body .act-main .main-anim .anim-box .anim-item-1 {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+.mui-act .act-body .act-main .main-anim .anim-box .anim-item-2 {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+.mui-act .act-body .act-main .main-anim .anim-box .anim-item-3 {
+  display: block;
+  z-index: 10;
+}
+.mui-act .act-body .act-main .main-anim .btn-revolve .anim-bg {
+  animation: opacity 1s 0s linear infinite;
+  -webkit-animation: opacity 1s 0s linear infinite;
+}
+.mui-act .act-body .act-main .main-anim .btn-revolve .anim-item-1 {
+  animation: musicRotate 3s 0s linear infinite;
+  -webkit-animation: musicRotate 3s 0s linear infinite;
+}
+.mui-act .act-body .act-main .main-anim .btn-revolve .anim-item-2 {
+  animation: RotateS 1s 0s linear infinite;
+  -webkit-animation: RotateS 1s 0s linear infinite;
+}
+.mui-act .act-body .act-main .main-anim .btn-revolve .anim-item-3 {
+  animation: musicRotate .5s 0s linear infinite;
+  -webkit-animation: musicRotate .5s 0s linear infinite;
+  z-index: 10;
+}
+.mui-act .act-body .act-main .main-anim .btn-end-move .anim-bg {
+  opacity: .5;
+  animation: Opacity1 6s ease-in-out forwards 1;
+}
+.mui-act .act-body .act-main .main-anim .btn-end-move .anim-item-1 {
+  animation: move3 7s ease-in-out 1;
+}
+.mui-act .act-body .act-main .main-anim .btn-end-move .anim-item-2 {
+  animation: move4 8s ease-in-out 1;
+}
+.mui-act .act-body .act-main .main-anim .btn-end-move .anim-item-3 {
+  animation: move3 9s ease-in-out 1;
+}
+.mui-act .act-body .act-main .main-anim .btn-first-move .anim-bg {
+  opacity: .2;
+  animation: Opacity1 12s ease-in-out forwards 1;
+}
+.mui-act .act-body .act-main .main-anim .btn-first-move .anim-item-1 {
+  animation: move3 12s ease-in-out 1;
+}
+.mui-act .act-body .act-main .main-anim .btn-first-move .anim-item-2 {
+  animation: move4 12s ease-in-out 1;
+}
+.mui-act .act-body .act-main .main-anim .btn-first-move .anim-item-3 {
+  animation: move3 12s ease-in-out 1;
+}
+.mui-act .act-body .act-main .main-anim .btn-ordinary-move .anim-bg {
+  opacity: .2;
+  animation: Opacity 2s ease-in-out forwards 1;
+}
+.mui-act .act-body .act-main .main-anim .btn-ordinary-move .anim-item-1 {
+  animation: move 2s ease-in-out 1;
+}
+.mui-act .act-body .act-main .main-anim .btn-ordinary-move .anim-item-2 {
+  animation: move2 2s ease-in-out 1;
+}
+.mui-act .act-body .act-main .main-anim .btn-ordinary-move .anim-item-3 {
+  animation: move 2s ease-in-out 1;
+}
+.mui-act .act-body .act-main .main-anim .btn-special-start .anim-bg {
+  opacity: .5;
+  animation: Opacity1 4s ease-in-out forwards 1;
+}
+.mui-act .act-body .act-main .main-anim .btn-special-start .anim-item-1 {
+  animation: move 4s ease-in-out 1;
+}
+.mui-act .act-body .act-main .main-anim .btn-special-start .anim-item-2 {
+  animation: move2 4s ease-in-out 1;
+}
+.mui-act .act-body .act-main .main-anim .btn-special-start .anim-item-3 {
+  animation: move 4s ease-in-out 1;
+}
+.mui-act .act-body .act-main .main-anim .btn-special-move .anim-bg {
+  opacity: .5;
+  animation: Opacity1 3s ease-in-out 1;
+}
+.mui-act .act-body .act-main .main-anim .btn-special-move .anim-item-1 {
+  animation: move 3s ease-in-out 1;
+}
+.mui-act .act-body .act-main .main-anim .btn-special-move .anim-item-2 {
+  animation: move2 3s ease-in-out 1;
+}
+.mui-act .act-body .act-main .main-anim .btn-special-move .anim-item-3 {
+  animation: move 3s ease-in-out 1;
+}
+.mui-act .act-body .act-main .main-anim .anim-shadow {
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 192px;
+  height: 192px;
+  box-shadow: 0 0 100px #f00 inset;
+  content: '111111';
+  border-radius: 200px;
+  z-index: 2;
+}
+.mui-act .act-body .act-main .main-winning-user {
+  width: 472px;
+  height: 380px;
+  overflow: hidden;
+}
+.mui-act .act-body .act-main .main-winning-user .winning-user-list {
+  overflow: hidden;
+  margin: 0 auto;
+}
+.mui-act .act-body .act-main .main-winning-user .winning-user-list .list-item {
+  width: 82px;
+  font-size: 18px;
+  color: #01cad1;
+  float: left;
+  opacity: 0;
+  animation: Opacity3 0.5s ease-in forwards 1;
+  text-align: center;
+}
+.mui-act .act-body .act-main .main-winning-user .winning-user-list .list-item .item-photo {
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 80px;
+  border: 1px solid #01cad1;
+  background: #ccc;
+}
+.mui-act .act-body .act-main .main-winning-user .winning-user-list .list-item .user-name {
+  display: inline;
+  width: 100%;
+  overflow: hidden;
+}
+.mui-act .act-body .act-main .main-winning-user .winning-user-list .list-item .short-name {
+  font-size: 16px;
+}
+.prize-4 {
+  background: url("../public/images/lottery/prize-4-bg.jpg") center top no-repeat;
+}
+.prize-4 .number-item {
+  font-size: 110px !important;
+  text-indent: 26px !important;
+}
+.prize-4 .act-main .main-winning-number .winning-number-list {
+  overflow: hidden;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-top: 40px;
+}
+.prize-4 .act-main .main-winning-number .winning-number-list .list-item {
+  margin-right: 31px;
+  line-height: 120px;
+}
+.prize-4 .act-main .main-winning-number .winning-number-list .list-item:first-child,
+.prize-4 .act-main .main-winning-number .winning-number-list .list-item:nth-child(8) {
+  padding-left: 50px;
+}
+.prize-4 .act-main .main-winning-number .winning-number-list .list-item:nth-child(7) {
+  margin-right: 0;
+}
+.prize-4 .act-main .main-winning-number .winning-number-list,
+.prize-4 .act-main .main-winning-user .winning-number-list,
+.prize-4 .act-main .main-winning-number .winning-user-list,
+.prize-4 .act-main .main-winning-user .winning-user-list {
+  overflow: hidden;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-top: 40px;
+}
+.prize-4 .act-main .main-winning-number .winning-number-list .list-item,
+.prize-4 .act-main .main-winning-user .winning-number-list .list-item,
+.prize-4 .act-main .main-winning-number .winning-user-list .list-item,
+.prize-4 .act-main .main-winning-user .winning-user-list .list-item {
+  margin-right: 31px;
+}
+.prize-4 .act-main .main-winning-number .winning-number-list .list-item:first-child,
+.prize-4 .act-main .main-winning-user .winning-number-list .list-item:first-child,
+.prize-4 .act-main .main-winning-number .winning-user-list .list-item:first-child,
+.prize-4 .act-main .main-winning-user .winning-user-list .list-item:first-child,
+.prize-4 .act-main .main-winning-number .winning-number-list .list-item:nth-child(8),
+.prize-4 .act-main .main-winning-user .winning-number-list .list-item:nth-child(8),
+.prize-4 .act-main .main-winning-number .winning-user-list .list-item:nth-child(8),
+.prize-4 .act-main .main-winning-user .winning-user-list .list-item:nth-child(8) {
+  padding-left: 50px;
+}
+.prize-4 .act-main .main-winning-number .winning-number-list .list-item:nth-child(7),
+.prize-4 .act-main .main-winning-user .winning-number-list .list-item:nth-child(7),
+.prize-4 .act-main .main-winning-number .winning-user-list .list-item:nth-child(7),
+.prize-4 .act-main .main-winning-user .winning-user-list .list-item:nth-child(7) {
+  margin-right: 0;
+}
+.prize-3 {
+  background: url("../public/images/lottery/prize-3-bg.png") center top no-repeat;
+}
+.prize-3 .act-main .main-winning-number .winning-number-list {
+  padding-left: 40px;
+  padding-top: 20px;
+}
+.prize-3 .act-main .main-winning-number .winning-number-list .list-item {
+  margin-right: 31px;
+  line-height: 120px;
+  color: #97ff7f !important;
+}
+.prize-3 .act-main .main-winning-number .winning-number-list .list-item:first-child,
+.prize-3 .act-main .main-winning-number .winning-number-list .list-item:nth-child(7) {
+  padding-left: 50px;
+}
+.prize-3 .act-main .main-winning-number .winning-number-list .list-item:nth-child(6) {
+  margin-right: 50px;
+}
+.prize-3 .act-main .main-winning-user .winning-user-list {
+  padding-left: 40px;
+  padding-top: 40px;
+}
+.prize-3 .act-main .main-winning-user .winning-user-list .list-item {
+  margin-right: 31px;
+  color: #97ff7f !important;
+}
+.prize-3 .act-main .main-winning-user .winning-user-list .list-item .item-photo {
+  border-color: #97ff7f !important;
+}
+.prize-3 .act-main .main-winning-user .winning-user-list .list-item:first-child,
+.prize-3 .act-main .main-winning-user .winning-user-list .list-item:nth-child(7) {
+  padding-left: 50px;
+}
+.prize-3 .act-main .main-winning-user .winning-user-list .list-item:nth-child(6) {
+  margin-right: 50px;
+}
+.prize-2 {
+  background: url("../public/images/lottery/prize-2-bg.png") center top no-repeat;
+}
+.prize-2 .act-main .main-winning-number .winning-number-list {
+  padding-top: 20px;
+}
+.prize-2 .act-main .main-winning-number .winning-number-list .list-item {
+  line-height: 120px;
+  margin-left: 50px;
+  margin-right: 50px;
+  font-size: 42px !important;
+  color: #fff490 !important;
+}
+.prize-2 .act-main .main-winning-number .winning-number-list .list-item:first-child,
+.prize-2 .act-main .main-winning-number .winning-number-list .list-item:nth-child(4) {
+  padding-left: 50px;
+}
+.prize-2 .act-main .main-winning-number .winning-number-list .list-item:nth-child(3) {
+  margin-right: 150px;
+  margin-left: 189px;
+}
+.prize-2 .act-main .main-winning-user .winning-user-list {
+  padding-top: 30px;
+}
+.prize-2 .act-main .main-winning-user .winning-user-list .list-item {
+  margin-right: 120px;
+  width: 122px !important;
+  color: #fff490 !important;
+}
+.prize-2 .act-main .main-winning-user .winning-user-list .list-item .item-photo {
+  width: 120px !important;
+  height: 120px !important;
+  border-color: #fff490 !important;
+}
+.prize-2 .act-main .main-winning-user .winning-user-list .list-item:first-child,
+.prize-2 .act-main .main-winning-user .winning-user-list .list-item:nth-child(4) {
+  padding-left: 50px;
+}
+.prize-2 .act-main .main-winning-user .winning-user-list .list-item:nth-child(3) {
+  margin-right: 150px;
+  margin-left: 175px;
+  margin-top: -55px;
+}
+.prize-2 .act-main .main-winning-user .winning-user-list .list-item:nth-child(2),
+.prize-2 .act-main .main-winning-user .winning-user-list .list-item:nth-child(5) {
+  margin-right: 0;
+}
+.prize-2 .act-main .main-winning-user .winning-user-list .list-item:nth-child(4),
+.prize-2 .act-main .main-winning-user .winning-user-list .list-item:nth-child(5) {
+  margin-top: -55px;
+}
+.prize-0,
+.prize-1 {
+  background: url("../public/images/lottery/prize-0-bg.png") center top no-repeat;
+}
+.prize-0 .act-main .main-winning-number .winning-number-list,
+.prize-1 .act-main .main-winning-number .winning-number-list {
+  width: 187px;
+  overflow: hidden;
+  padding-top: 80px;
+}
+.prize-0 .act-main .main-winning-number .winning-number-list .list-item,
+.prize-1 .act-main .main-winning-number .winning-number-list .list-item {
+  font-size: 32px !important;
+  text-align: center;
+  clear: left !important;
+  margin: 0 auto;
+  color: #bb5d84 !important;
+}
+.prize-0 .act-main .main-winning-number .winning-number-list .list-item .item-photo,
+.prize-1 .act-main .main-winning-number .winning-number-list .list-item .item-photo {
+  display: block;
+  width: 180px;
+  height: 180px;
+  border-radius: 185px;
+  border: 3px solid #ff2754;
+  background: #ccc;
+}
+.prize-0 .act-main .main-winning-number .winning-number-list .list-item .user-name,
+.prize-1 .act-main .main-winning-number .winning-number-list .list-item .user-name {
+  display: inline;
+  width: 100%;
+  overflow: hidden;
+}
+.prize-0 .act-main .main-winning-number .winning-number-list .list-item .short-name,
+.prize-1 .act-main .main-winning-number .winning-number-list .list-item .short-name {
+  font-size: 16px;
+}
+.prize-0 .act-main .main-anim .anim-box .anim-bg,
+.prize-1 .act-main .main-anim .anim-box .anim-bg {
+  opacity: .5 !important;
+}
+.prize-0 .act-main .main-winning-user .winning-user-list,
+.prize-1 .act-main .main-winning-user .winning-user-list {
+  width: 187px;
+  padding-top: 80px;
+}
+.prize-0 .act-main .main-winning-user .winning-user-list .list-item,
+.prize-1 .act-main .main-winning-user .winning-user-list .list-item {
+  margin-right: 187px;
+  width: 187px !important;
+  font-size: 32px !important;
+  text-align: center;
+  color: #feffa2 !important;
+}
+.prize-0 .act-main .main-winning-user .winning-user-list .list-item .item-photo,
+.prize-1 .act-main .main-winning-user .winning-user-list .list-item .item-photo {
+  width: 180px !important;
+  height: 180px !important;
+  border-radius: 185px !important;
+  border: 3px solid #fff100 !important;
+}
+.prize-1 {
+  background: url('../public/images/lottery/prize-1-bg.png') center top no-repeat;
+}
+.prize-1 .act-main .main-winning-number .winning-number-list .list-item {
+  color: #ff6232 !important;
+}
+.prize-1 .act-main .main-winning-number .winning-number-list .list-item .item-photo {
+  border: 3px solid #ff6232;
+}
+.prize-1 .act-main .main-winning-user .winning-user-list .list-item {
+  color: #ff6232 !important;
+}
+.prize-1 .act-main .main-winning-user .winning-user-list .list-item .item-photo {
+  border: 3px solid #ff6232 !important;
+}
+/**奖项控制面板**/
+.mui-back {
+  width: 50px;
+  height: 50px;
+  line-height: 99em;
+  background: #02010F;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  border-radius: 100px;
+  transition: all .5s;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+.mui-back .back-list {
+  display: none;
+}
+.mui-back.active {
+  width: 800px;
+  line-height: 50px;
+}
+.mui-back.active .back-list {
+  display: flex;
+}
+.mui-back.active .back-list .list-item {
+  flex: 1;
+  text-align: center;
+  border-right: 1px solid #fff;
+  color: #fff;
+}
+.mui-back.active .back-list .list-item:last-child {
+  border-right: none;
+}
+.mui-back.active .back-list .item-checked {
+  background: #01cad1;
+}
+@keyframes musicRotate {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+    transform: rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(-360deg);
+    transform: rotateZ(-360deg);
+  }
+}
+@-webkit-keyframes musicRotate {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+    transform: rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(-360deg);
+    transform: rotateZ(-360deg);
+  }
+}
+@keyframes RotateS {
+  0% {
+    -webkit-transform: rotateZ(-360deg);
+    transform: rotateZ(-360deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(0deg);
+    transform: rotateZ(0deg);
+  }
+}
+@-webkit-keyframes RotateS {
+  0% {
+    -webkit-transform: rotateZ(-360deg);
+    transform: rotateZ(-360deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(0deg);
+    transform: rotateZ(0deg);
+  }
+}
+@keyframes Opacity {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .5;
+  }
+}
+@keyframes Opacity1 {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .5;
+  }
+}
+@keyframes Opacity3 {
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes Scale {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.2, 1.2);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+@-webkit-keyframes Scale {
+  0% {
+    transform: scale(0.5, 0.5);
+  }
+  50% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(0.5, 0.5);
+  }
+}
+.move {
+  animation: move 3s ease-in 1;
+}
+.movetoo {
+  animation: moveToo .4s linear infinite;
+}
+@keyframes move {
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: rotate3d(0, 0, 1, calc(3600deg));
+  }
+}
+@keyframes move2 {
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: rotate3d(0, 0, 1, calc(-3600deg));
+  }
+}
+@keyframes move3 {
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: rotate3d(0, 0, 1, calc(18000deg));
+  }
+}
+@keyframes move4 {
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: rotate3d(0, 0, 1, calc(-36000deg));
+  }
+}
+@keyframes moveToo {
+  100% {
+    transform: rotate3d(0, 0, 1, calc(10080deg));
+  }
+}
+@keyframes jianbian {
+  100% {
+    width: 390px;
+    height: 390px;
+    opacity: 1;
+  }
+}

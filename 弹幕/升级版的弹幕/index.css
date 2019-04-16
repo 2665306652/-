@@ -1,0 +1,419 @@
+@media screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+    .footer {
+        background: url('public/images/lottery/footer.png')no-repeat center;
+        width: 6.81rem;
+        height: 5.43rem;
+        background-color: #020231;
+        border-radius: 0.12rem;
+        border: solid 1px #00ffff;
+        background-size: 100% 100%;
+        position: absolute;
+        top: 50%;
+        left: 4%;
+        z-index: 1;
+    }
+}
+
+body,
+div,
+ul,
+ol,
+li,
+form,
+input,
+button,
+textarea,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 16px;
+    font-family: "微软雅黑";
+}
+
+ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body,
+html {
+    width: 100vw;
+    height: 100%;
+    overflow: hidden;
+    /* box-sizing: border-box;
+    overflow-y: auto; */
+}
+
+html {
+    font-size: 13.3333vw;
+}
+
+@font-face {
+    font-family: 'iconfont';
+    /* project id 994045 */
+    src: url('//at.alicdn.com/t/font_994045_4ai3c6h3zk6.eot');
+	src: url('//at.alicdn.com/t/font_994045_4ai3c6h3zk6.eot?#iefix') format('embedded-opentype'),
+	 url('//at.alicdn.com/t/font_994045_vj5tyvrhmg.woff2') format('woff2'), 
+	 url('//at.alicdn.com/t/font_994045_4ai3c6h3zk6.woff') format('woff'),
+	  url('//at.alicdn.com/t/font_994045_4ai3c6h3zk6.ttf') format('truetype'),
+	  url('//at.alicdn.com/t/font_994045_4ai3c6h3zk6.svg#iconfont') format('svg');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 42px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icont-img{
+	display: block;
+	position: absolute;
+	width: 10%;
+    right: 5%;
+	top: 3%;
+	-webkit-animation-name: rotatae;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+}
+
+/* 音乐图标旋转动画 */
+
+@-webkit-keyframes rotatae {
+    0% {
+        -webkit-transform: rotateZ(0deg);
+        transform: rotateZ(0deg);
+    }
+    100% {
+        -webkit-transform: rotateZ(-360deg);
+        transform: rotateZ(-360deg);
+    }
+}
+
+.pause {
+    animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+    -webkit-animation: none;
+}
+
+.box {
+    height: 100vh;
+    background: url('public/images/lottery/bg.jpg')no-repeat center;
+    background-size: 100% 100%;
+    width: 100vw;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+    /* background-color: #000; */
+}
+
+.boxs {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background-color: #000000;
+    opacity: 0.9;
+    z-index: 2;
+}
+
+/* .container {
+    width: 4.23rem;
+    height: 2.5rem;
+    margin: 0 auto;
+    padding-top: 1rem;
+}
+
+.container>img {
+    width: 100%;
+    height: 100%;
+} */
+.logo>img{
+    position: absolute;
+    top: 3%;
+    left: 5%;
+    width: 25%;
+}
+.container>img{
+    width: 75%;
+    display: block;
+    margin: 0 auto;
+    /* position: fixed; */
+    position: absolute;
+    left: 13%;
+    top: 10%;
+    animation: changed 5s steps(100) both  infinite;
+}
+@keyframes changed{
+    25%{
+        transform: translate3d(2vw, 0vw, 0);
+    }
+    50%{
+        transform: translate3d(2vw, 1vw, 0);
+    }
+    75%{
+        transform: translate3d(0vw, 1vw, 0);
+    }
+    100% {
+        transform: translate3d(0vw, 0vw, 0);
+    }
+}
+.times>img{
+    width: 80%;
+    position: absolute;
+    top: 21%;
+    left: 10%;
+    animation: changetime 5s steps(100) both  infinite;
+}
+@keyframes changetime{
+    25%{
+        transform: translate3d(2vw, 0vw, 0);
+    }
+    50%{
+        transform: translate3d(2vw, 2vw, 0);
+    }
+    75%{
+        transform: translate3d(0vw, 2vw, 0);
+    }
+    100% {
+        transform: translate3d(0vw, 0vw, 0);
+    }
+}
+
+.car>img {
+    width: 65%;
+    display: block;
+    position: absolute;
+    left: 95%;
+    top: 42%;
+    opacity: 1;
+    /* transform: translate(-50%, -50%); */
+    animation: change 5s steps(100) both infinite;
+    /* -moz-animation: change 3;    
+     -webkit-animation: change 3s;    
+     -o-animation: change 3s; */
+}
+
+@keyframes change {
+    10% {
+        transform: translate3d(-35vw, -10vw, 0);
+        width: 40%;
+    }
+    100% {
+        transform: translate3d(-35vw, -10vw, 0);
+        width: 40%;
+    }
+}
+
+.motorcycle>img {
+    width: 60%;
+    position: absolute;
+    top: 42%;
+    opacity: 1;
+    animation: changes 5s steps(200) both infinite;
+    left: -68%;
+}
+
+@keyframes changes {
+    10% {
+        transform: translate3d(65vw, -15vw, 0vw);
+        width: 36%;
+    }
+    100% {
+        transform: translate3d(65vw, -15vw, 0vw);
+        width: 36%;
+    }
+}
+
+.footer {
+    background: url('public/images/lottery/footer.png')no-repeat center;
+    width: 6.81rem;
+    height: 5.43rem;
+    background-color: #020231;
+    border-radius: 0.12rem;
+    border: solid 1px #00ffff;
+    background-size: 100% 100%;
+    position: absolute;
+    /* top: 52%; */
+    left: 4%;
+    bottom: 5%;
+    z-index: 1;
+}
+
+.footer-title {
+    font-family: 'PingFangSC-Regular';
+    font-size: 0.24rem;
+    font-weight: normal;
+    color: #30568a;
+    margin-top: 0.3rem;
+    margin-left: 0.48rem;
+    padding-bottom: 0.26rem;
+}
+
+.list {
+    width: 5.97rem;
+    height: 0.85rem;
+    background-color: #050b2b;
+    border-radius: 0.1rem;
+    border: solid 1px rgba(0, 255, 255, 0.5);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.08rem;
+}
+
+.list>span {
+    width: 1.05rem;
+    font-family: 'PingFangSC-Regular';
+    font-size: 0.3rem;
+    font-weight: normal;
+    font-stretch: normal;
+    color: #4de5fa;
+    height: 0.85rem;
+    line-height: 0.85rem;
+    margin-left: 0.24rem;
+}
+
+#wishes {
+    width: 4.05rem !important;
+    margin-left: 0rem !important;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap !important;
+    color: rgba(77, 229, 250, 0.5);
+}
+
+.list>input {
+    background: #04072e;
+    border: 0;
+    width: 71%;
+    font-size: 0.3rem;
+    color: #4de5fa;
+    outline: none;
+    /* vertical-align: center; */
+    line-height: 0.65rem;
+}
+
+::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    color: rgba(0, 255, 255, 0.5);
+}
+
+.choice {
+    width: 5.97rem;
+    height: 0.85rem;
+    background-color: #d21c45;
+    border-radius: 0.42rem;
+    margin: 0 auto;
+    margin-top: 0.25rem;
+    border: none;
+    outline: none;
+    display: block;
+    font-size: 0.36rem;
+    color: #fff;
+    font-family: 'PingFangSC-Semibold';
+    text-align: center;
+    line-height: 0.85rem;
+}
+
+.barrage {
+    background: url('public/images/lottery/section.png')no-repeat center;
+    width: 6.81rem;
+    height: 8.93rem;
+    background-color: #020231;
+    border-radius: 0.12rem;
+    border: solid 1px #00ffff;
+    margin: 0 auto;
+    background-size: 100% 100%;
+    position: relative;
+   top: 10%;
+    z-index: 3;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.data {
+    overflow: auto;
+    height: 8.1rem;
+    margin: 0.5rem auto;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-around;
+}
+
+.array {
+    /* width: calc(100% - 4px) ; */
+    height: 0.65rem;
+    border-radius: 0.34rem;
+    border: solid 2px #0a3569;
+    font-family: "PingFangSC-Regular";
+    font-size: 0.24rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 0.68rem;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #4de5fa;
+    margin-top: 0.2rem;
+    width: 3.06rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap !important;
+}
+
+.array>p {
+    width: 91%;
+    margin: 0 auto;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap !important;
+}
+
+.submitToast {
+    background-color: #04072e;
+    opacity: 0.95;
+    width: 3.46rem;
+    height: 3.46rem;
+    border-radius: 0.04rem;
+    overflow: hidden;
+    position: absolute;
+    top: 15%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    left: 27%;
+    display: none;
+}
+
+.submitToast>i {
+    color: #ff0e0e;
+    display: block;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    height: 1rem;
+    line-height: 1rem;
+    text-align: center;
+    font-family: 'PingFangSC-Semibold';
+    font-size: 0.32rem;
+    font-weight: 600;
+    font-stretch: normal;
+    letter-spacing: 1px;
+    color: #ff3030;
+}
+
+/* .array:last-child{
+	margin-bottom:.4rem !important;
+} */
